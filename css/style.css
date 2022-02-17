@@ -310,6 +310,7 @@
 
 .work__heading {
     margin: 0 130px 90px 200px;
+    color: #2d2d42;
 }
 
 .work__title {
@@ -318,14 +319,12 @@
     line-height: 65px;
     font-weight: 900;
     letter-spacing: -0.75px;
-    color: #2d2d42;
 }
 
 .work__title-desc {
     font-size: 30px;
     line-height: 40px;
     font-weight: 300;
-    color: #2d2d42;
 }
 
 .work__main-content {
@@ -374,9 +373,11 @@
 .work__card:nth-child(odd) {
     margin-right: 20px;
 }
-.work__card:nth-last-child(1) , .work__card:nth-last-child(2){
+
+.work__card:nth-last-child(1), .work__card:nth-last-child(2) {
     margin-bottom: 0;
 }
+
 .work__image {
     margin-bottom: 40px;
 }
@@ -398,9 +399,10 @@
 }
 
 /* work team */
-.team{
+.team {
     margin-bottom: 100px;
 }
+
 .team__main-content {
     background: url("../images/jpg_png/img-team-home.jpg") no-repeat;
     height: 600px;
@@ -433,4 +435,79 @@
     font-weight: 300;
     font-size: 30px;
     line-height: 40px;
+}
+
+/* inside frontbyte section */
+.inside {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.heading-section {
+    margin: 0 130px 90px 200px;
+}
+
+.title-section {
+    margin-bottom: 25px;
+    font-size: 60px;
+    line-height: 65px;
+    font-weight: 900;
+    letter-spacing: -0.75px;
+}
+
+.subtitle-section {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 300;
+}
+
+.inside__title {
+    margin-bottom: 30px;
+}
+
+.inside__subtitle {
+    margin-bottom: 90px;
+}
+
+.inside__background {
+    position: relative;
+}
+
+.inside__logo {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    margin-bottom: 48px;
+}
+
+/* inside tabs */
+
+.inside__card {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    background: #f4f4f7;
+    padding: 40px 60px 0 0;
+}
+
+.inside__description {
+    margin-bottom: 55px;
+}
+
+.tabs {
+    display: flex;
+}
+.tab:first-of-type{
+    background-color: #2d2d42;
+}
+.tab {
+    display: inline-block;
+    width: 65px;
+    height: 1px;
+    background-color: #c0c6c8;
+}
+
+.tab+.tab {
+    margin-left: 9px;
 }
