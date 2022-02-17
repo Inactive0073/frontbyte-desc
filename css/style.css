@@ -275,10 +275,11 @@
     flex: 1 0 380px;
 }
 
-.about__list{
+.about__list {
     margin-right: 120px;
 }
-.about__list:last-child{
+
+.about__list:last-child {
     margin-right: 0;
 }
 
@@ -286,9 +287,11 @@
     margin-bottom: 30px;
     position: relative;
 }
-.about__point:first-child{
+
+.about__point:first-child {
     margin-bottom: 20px;
 }
+
 .about__point::before {
     content: "";
     position: absolute;
@@ -298,4 +301,91 @@
     right: 100%;
     transform: translateX(-30px);
     height: 1px;
+}
+
+/* our work section */
+.work{
+    margin-bottom: 100px;
+}
+.work__heading {
+    margin: 0 130px 90px 200px;
+}
+
+.work__title {
+    margin-bottom: 25px;
+    font-size: 60px;
+    line-height: 65px;
+    font-weight: 900;
+    letter-spacing: -0.75px;
+    color: #2d2d42;
+}
+
+.work__title-desc {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 300;
+    color: #2d2d42;
+}
+
+.work__main-content {
+    background-image: url("../images/jpg_png/vid-birdieeyes.jpg");
+    background-repeat: no-repeat;
+    width: 1180px;
+    height: 600px;
+    padding: 200px 0 20px 200px;
+    margin-bottom: 20px;
+}
+
+.work__item {
+    background-color: #64cae1;
+    padding: 40px;
+    color: #f4f4f7;
+    width: 380px;
+    min-height: 380px;
+}
+
+.work__subtitle {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 900;
+    letter-spacing: 1.75px;
+    margin-bottom: 40px;
+}
+
+.work__description {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 300;
+    max-width: 380px;
+}
+
+.work__cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work__card {
+    max-width: 580px;
+    color: #2d2d42;
+    margin-bottom: 70px;
+}
+.work__card:nth-child(odd){
+    margin-right: 20px;
+}
+.work__image{
+    margin-bottom: 40px;
+}
+.work__article-title {
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.work__article-description{
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 40px;
+    max-width: 440px;
 }
