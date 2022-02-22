@@ -5,25 +5,15 @@
     box-sizing: border-box;
 }
 
+a {
+    display: inline-block;
+    line-height: 0;
+}
+
 * img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* scrollbar */
-p {
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-p::-webkit-scrollbar {
-    background-color: rgba(244, 244, 247, 0.5);
-    width: 3px;
-}
-
-p::-webkit-slider-thumb {
-    background-color: rgba(244, 244, 247, 0.11);
 }
 
 .page-wrapper {
@@ -37,15 +27,31 @@ p::-webkit-slider-thumb {
     margin: 0 auto;
 }
 
+.b-container {
+    margin: 90px 0 100px;
+}
+
+.cropped{
+    -webkit-line-clamp: 6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 /* Header */
-.header__background-image {
+.header__background-wrapper {
     position: absolute;
+    display: block;
+    height: 100%;
+}
+
+.logo {
+    flex-shrink: 0;
+    position: relative;
 }
 
 .header {
     position: relative;
     margin-bottom: 100px;
-    max-height: 680px;
 }
 
 .header::before {
@@ -98,7 +104,7 @@ p::-webkit-slider-thumb {
     line-height: 20px;
     font-weight: 300;
     display: inline-block;
-    transition: .3s ease;
+    transition: color 0.3s;
     cursor: pointer;
     z-index: 2;
     position: relative;
@@ -129,17 +135,18 @@ p::-webkit-slider-thumb {
     font-size: 20px;
     line-height: 30px;
     font-weight: 300;
-    max-height: 60px;
     margin-bottom: 80px;
     position: relative;
     color: rgba(244, 244, 247, 0.5);
     z-index: 2;
+    max-width: 660px;
 }
 
 .header__lang-list {
     margin-left: auto;
     margin-right: 60px;
     z-index: 2;
+    flex-shrink: 0;
 }
 
 .header__lang-list input[type=radio] {
@@ -156,7 +163,6 @@ p::-webkit-slider-thumb {
     width: 40px;
     height: 40px;
 }
-
 
 .header__lang-list label:last-child {
     margin-right: 0;
@@ -191,7 +197,7 @@ p::-webkit-slider-thumb {
     padding: 23px 100px 25px 200px;
     z-index: 2;
     width: 580px;
-    transition: .2s ease;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .header__link-item::after {
@@ -210,6 +216,9 @@ p::-webkit-slider-thumb {
     background-color: rgba(244, 244, 247, 0.1);
 }
 
+/* ================= end of header=======================  */
+
+
 /* section about us */
 .about {
     background-color: #ffffff;
@@ -224,6 +233,7 @@ p::-webkit-slider-thumb {
     letter-spacing: -0.75px;
     margin-bottom: 30px;
     font-weight: 900;
+    max-width: 780px;
 }
 
 .about__description {
@@ -239,6 +249,7 @@ p::-webkit-slider-thumb {
     display: flex;
     margin-bottom: 70px;
     max-height: 210px;
+    overflow: hidden;
 }
 
 .about__item {
@@ -333,6 +344,8 @@ p::-webkit-slider-thumb {
     letter-spacing: 0;
     color: #2d2d42;
     flex: 1 0 380px;
+    padding-left: 60px;
+    margin-left: -60px;
 }
 
 .about__list {
@@ -341,6 +354,7 @@ p::-webkit-slider-thumb {
 
 .about__list:last-child {
     margin-right: 0;
+    padding-left: 80px;
 }
 
 .about__point {
@@ -363,6 +377,7 @@ p::-webkit-slider-thumb {
     height: 1px;
 }
 
+/* ====================== end of section about=============== */
 /* our work section */
 .work {
     margin-bottom: 100px;
@@ -434,6 +449,29 @@ p::-webkit-slider-thumb {
     width: 580px;
     color: #2d2d42;
     margin-bottom: 70px;
+    position: relative;
+    cursor: pointer;
+}
+
+.work__card::before, .news__article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: -3px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.work__card:hover::before, .news__article:hover::before {
+    border: 2px solid rgba(45, 45, 66, 0.1);
+}
+
+.work__link {
+    color: inherit;
 }
 
 .work__card img {
@@ -469,16 +507,15 @@ p::-webkit-slider-thumb {
     max-height: 160px;
 }
 
+/* ========================= end of work section======================== */
 /* work team */
-.team {
-    margin-bottom: 95px;
-}
-
 .team__main-content {
     height: 600px;
     position: relative;
+    margin-bottom: 95px;
 }
-.team__title{
+
+.team__title {
     font-weight: 900;
     font-size: 13px;
     line-height: 20px;
@@ -486,7 +523,8 @@ p::-webkit-slider-thumb {
     text-transform: uppercase;
     margin-bottom: 50px;
 }
-.team__description{
+
+.team__description {
     max-height: 160px;
     font-weight: 300;
     font-size: 30px;
@@ -515,25 +553,30 @@ p::-webkit-slider-thumb {
     line-height: 40px;
 }
 
+/* ============================ end of team section============================= */
 /* inside frontbyte section */
 .inside {
     position: relative;
     margin-bottom: 75px;
 }
-.inside__heading{
+
+.inside__heading {
     margin: 0 130px 0 200px;
 }
+
 .heading-section {
     margin: 0 130px 0 200px;
 }
-.inside__title{
+
+.inside__title {
     margin-bottom: 25px;
     font-size: 60px;
     line-height: 65px;
     font-weight: 900;
     letter-spacing: -0.75px;
 }
-.inside__card-title{
+
+.inside__card-title {
     font-weight: 900;
     font-size: 13px;
     line-height: 20px;
@@ -541,6 +584,7 @@ p::-webkit-slider-thumb {
     text-transform: uppercase;
     margin-bottom: 32px;
 }
+
 .title-section {
     margin-bottom: 25px;
     font-size: 60px;
@@ -606,21 +650,31 @@ p::-webkit-slider-thumb {
     display: flex;
 }
 
-.tab:first-of-type {
-    background-color: #2d2d42;
-}
-
 .tab {
     display: inline-block;
+    position: relative;
     width: 65px;
     height: 1px;
     background-color: #c0c6c8;
+    transition: background-color 0.3s;
+}
+
+.tab a {
+    display: inline-block;
+    line-height: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tab--active {
+    background-color: #2d2d42;
 }
 
 .tab+.tab {
     margin-left: 9px;
 }
 
+/* ======================= end of inside section ==================== */
 /* news cards */
 .news {
     margin-bottom: 100px;
@@ -645,6 +699,8 @@ p::-webkit-slider-thumb {
     max-width: 280px;
     font-weight: 300;
     max-height: 100px;
+    position: relative;
+    cursor: pointer;
 }
 
 .news__article+.news__article {
@@ -667,10 +723,11 @@ p::-webkit-slider-thumb {
     line-height: 20px;
 }
 
+/* ============================= end of news section ============================= */
 /* footer */
 .footer {
     background-color: #000;
-    padding: 94px 30px 35px 200px;
+    padding: 101px 30px 35px 200px;
     color: #f4f4f7;
     position: relative;
 }
@@ -681,7 +738,6 @@ p::-webkit-slider-thumb {
 
 .footer__wrapper {
     position: relative;
-    /* background: url("../images/svg/img-map.svg") no-repeat 0 65px; */
 }
 
 .footer__background {
@@ -689,6 +745,7 @@ p::-webkit-slider-thumb {
     z-index: 1;
     right: -25px;
     top: 75px;
+    object-fit: contain;
 }
 
 .footer p, .footer h3 {
@@ -711,8 +768,28 @@ p::-webkit-slider-thumb {
     height: 30px;
 }
 
+.linkedin, .facebook, .instagram {
+    transition: transform 0.3s, filter 0.1s;
+}
+
+.linkedin:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(2px 0px 0 rgb(100, 202, 225));
+}
+
+.facebook:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(2px 0px 0 rgb(66, 103, 178));
+}
+
+.instagram:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(2px 0px 0 rgb(193, 53, 132));
+}
+
 .footer__cities {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 115px;
 }
 
@@ -763,7 +840,7 @@ p::-webkit-slider-thumb {
 
 .footer__description {
     display: inline-block;
-    margin-bottom: 85px;
+    margin-bottom: 90px;
     max-width: 380px;
     z-index: 2;
     position: relative;
@@ -789,7 +866,7 @@ p::-webkit-slider-thumb {
     border: 1px solid transparent;
     padding: 25px 100px 25px 200px;
     width: 580px;
-    transition: .2s ease;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .link-item::after {
