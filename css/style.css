@@ -647,8 +647,8 @@ body {
     position: absolute;
     z-index: 1;
     right: -25px;
-    top: 75px;
-    object-fit: contain;
+    top: 64px;
+    object-fit: scale-down;
 }
 
 .footer p, .footer h3 {
