@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -69,6 +70,7 @@ body {
     left: 0;
     top: 0;
     height: 100%;
+    width: 100%;
     line-height: 0;
     filter: brightness(0.5);
 }
@@ -303,7 +305,6 @@ body {
 }
 
 .main-text--list {
-    flex: 1 0 380px;
     padding-left: 60px;
     margin-left: -60px;
     column-count: 2;
