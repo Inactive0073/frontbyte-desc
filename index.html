@@ -15,6 +15,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="images/favicon//mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="fonts/roboto-black.woff" as="font">
+    <link rel="preload" href="fonts/roboto-black.woff2" as="font">
+    <link rel="preload" href="fonts/roboto-light.woff" as="font">
+    <link rel="preload" href="fonts/roboto-light.woff2" as="font">
     <link rel="preload" href="css/fonts.css" as="style">
     <link rel="preload" href="css/reset.css" as="style">
     <link rel="preload" href="css/style.css" as="style">
@@ -27,26 +31,30 @@
     <div class="wrapper">
         <header class="header">
             <a class="logo" href="javascript: void(0);">
-                <img class="logo__image" src="images/svg/img-logo-desktop-light.svg" alt="">
+                <picture class="logo__image">
+                    <img src="images/svg/img-logo-desktop-light.svg" alt="">
+                </picture>
             </a>
-            <nav class="nav">
-                <a href="javascript: void(0);" title="About" class="menu-link">About</a>
-                <a href="javascript: void(0);" title="Projects" class="menu-link">Projects</a>
-                <a href="javascript: void(0);" title="Services" class="menu-link">Services</a>
-                <a href="javascript: void(0);" title="Our team" class="menu-link">Our team</a>
-                <a href="javascript: void(0);" title="Events" class="menu-link">Events</a>
-                <a href="javascript: void(0);" title="Contacts" class="menu-link">Contacts</a>
+            <nav class="menu">
+                <a href="javascript: void(0);" title="About" class="menu__link">About</a>
+                <a href="javascript: void(0);" title="Projects" class="menu__link">Projects</a>
+                <a href="javascript: void(0);" title="Services" class="menu__link">Services</a>
+                <a href="javascript: void(0);" title="Our team" class="menu__link">Our team</a>
+                <a href="javascript: void(0);" title="Events" class="menu__link">Events</a>
+                <a href="javascript: void(0);" title="Contacts" class="menu__link">Contacts</a>
             </nav>
             <ul class="lang-list">
-                <li class="lang-point"><a href="javascript: void(0);" title="" class="lang-link">No</a></li>
-                <li class="lang-point lang-point--active"><a href="javascript: void(0);" title=""
-                        class="lang-link">En</a></li>
-                <li class="lang-point"><a href="javascript: void(0);" title="" class="lang-link">Ru</a></li>
+                <li class="lang-list__point"><a href="javascript: void(0);" title="">No</a></li>
+                <li class="lang-list__point lang-list__point--active"><a href="javascript: void(0);" title="">En</a>
+                </li>
+                <li class="lang-list__point"><a href="javascript: void(0);" title="">Ru</a></li>
             </ul>
         </header>
         <main class="main">
             <section class="title-section">
                 <picture class="title-section__background">
+                    <source srcset="images/content-images/img-header-1.webp" type="image/webp">
+                    <source srcset="images/content-images/img-header.jpg" type="image/jpg">
                     <img src="images/content-images/img-header.jpg" alt="title-background">
                 </picture>
                 <h1 class="title title--main">We&nbsp;provide digital services and develop our own products
@@ -64,19 +72,20 @@
                 </p>
                 <div class="about__list">
                     <div class="about__item">
-                        <picture class="about__icon about__icon--left "><img src="images/svg/ic-project.svg" alt="">
+                        <picture class="about__icon about__icon--left ">
+                            <img src="images/svg/ic-project.svg" alt="">
                         </picture>
-                        <p class="about__text">Project management for simple and complex projects</p>
+                        <p>Project management for simple and complex projects</p>
                     </div>
                     <div class="about__item">
                         <picture class="about__icon about__icon--middle "><img src="images/svg/ic-hire.svg" alt="">
                         </picture>
-                        <p class="about__text">Management for hire</p>
+                        <p>Management for hire</p>
                     </div>
                     <div class="about__item">
                         <picture class="about__icon about__icon--right "><img src="images/svg/ic-digital.svg" alt="">
                         </picture>
-                        <p class="about__text">Digital transformation</p>
+                        <p>Digital transformation</p>
                     </div>
                 </div>
                 <h3 class="title title--activity">What We Do</h3>
@@ -99,19 +108,27 @@
                     <p class="subtitle-text">We&nbsp;change the way businesses and industries operate.</p>
                 </header>
                 <div class="work__cards">
-                    <div class="work__main-content">
-                        <img class="work__background-image" src="images/content-images/vid-birdieeyes.jpg" alt="">
-                        <div class="work__item">
-                            <a href="javascript: void(0);" title="BirdieEyes">
+                    <article class="work__card work__card--main">
+                        <a href="javascript: void(0);" title="BirdieEyes">
+                            <picture class="work__background-image">
+                                <source srcset="images/content-images/vid-birdieeyes-1.webp" type="image/webp">
+                                <source srcset="images/content-images/vid-birdieeyes.jpg" type="image/jpg">
+                                <img src="images/content-images/vid-birdieeyes.jpg" alt="">
+                            </picture>
+                            <div class="work__item">
                                 <h3 class="work__subtitle">BirdieEyes</h3>
                                 <p class="subtitle-text cropped">We have introduced AR technology into one of the
                                     most traditional games and made it even more interesting</p>
-                            </a>
-                        </div>
-                    </div>
+                            </div>
+                        </a>
+                    </article>
                     <article class="work__card">
                         <a href="javascript: void(0);" title="UpSport">
-                            <img class="work__image" src="images/content-images/img-upsport.jpg" alt="">
+                            <picture class="work__image">
+                                <source srcset="images/content-images/img-upsport.webp" type="image/webp">
+                                <source srcset="images/content-images/img-upsport.jpg" type="image/jpg">
+                                <img src="images/content-images/img-upsport.jpg" alt="">
+                            </picture>
                             <h3 class="work__article-title">UpSport</h3>
                             <p class="subtitle-text subtitle-text--article-description">Live communication platform that
                                 has
@@ -123,7 +140,11 @@
                     </article>
                     <article class="work__card">
                         <a href="javascript: void(0);" title="XLand">
-                            <img class="work__image" src="images/content-images/img-xland.jpg" alt="XLand">
+                            <picture class="work__image">
+                                <source srcset="images/content-images/img-xland.webp" type="image/webp">
+                                <source srcset="images/content-images/img-xland.jpg" type="image/jpg">
+                                <img src="images/content-images/img-xland.jpg" alt="XLand">
+                            </picture>
                             <h3 class="work__article-title">XLand</h3>
                             <p class="subtitle-text subtitle-text--article-description">Digital presence for the first
                                 indoor
@@ -133,7 +154,11 @@
                     </article>
                     <article class="work__card">
                         <a href="javascript: void(0);" title="phonero">
-                            <img class="work__image" src="images/content-images/img-phonero.jpg" alt="">
+                            <picture class="work__image">
+                                <source srcset="images/content-images/img-phonero-1.webp" type="image/webp">
+                                <source srcset="images/content-images/img-phonero.jpg" type="image/jpg">
+                                <img src="images/content-images/img-phonero.jpg" alt="">
+                            </picture>
                             <h3 class="work__article-title">phonero</h3>
                             <p class="subtitle-text subtitle-text--article-description">Interfaces for the cloud based
                                 switchboard
@@ -144,7 +169,11 @@
                     </article>
                     <article class="work__card">
                         <a href="javascript: void(0);" title="Kongsberg Group">
-                            <img class="work__image" src="images/content-images/img-kongsberg.jpg" alt="">
+                            <picture class="work__image">
+                                <source srcset="images/content-images/img-kongsberg.webp" type="image/webp">
+                                <source srcset="images/content-images/img-kongsberg.jpg" type="image/jpg">
+                                <img src="images/content-images/img-kongsberg.jpg" alt="">
+                            </picture>
                             <h3 class="work__article-title">Kongsberg Group</h3>
                             <p class="subtitle-text subtitle-text--article-description">Groundbreaking defence and
                                 aerospace
@@ -154,119 +183,125 @@
                 </div>
             </section>
             <section class="team">
-                <img class="team__background-image" src="images/content-images/img-team-home.jpg" alt="">
-                <div class="team__card">
-                    <a href="javascript:void(0);">
+                <a href="javascript:void(0);">
+                    <picture class="team__background-image">
+                        <source srcset="images/content-images/img-team-home-1.webp" type="image/webp">
+                        <source srcset="images/content-images/img-team-home.jpg" type="image/jpg">
+                        <img src="images/content-images/img-team-home.jpg" alt="">
+                    </picture>
+                    <div class="team__card">
                         <h3 class="team__title">our team</h3>
                         <p class="subtitle-text cropped">We are united by our passion to create unique and
                             efficient digital
                             products</p>
-                    </a>
-                </div>
-            </section>
-            <section class="inside">
-                <header class="inside__heading">
-                    <h2 class="title title--inside">Inside Frontbyte</h2>
-                    <p class="subtitle-text subtitle-text--inside">We change the way businesses and industries
-                        operate.
+                </a>
+    </div>
+    </section>
+    <section class="inside">
+        <header class="inside__heading">
+            <h2 class="title title--inside">Inside Frontbyte</h2>
+            <p class="subtitle-text subtitle-text--inside">We change the way businesses and industries
+                operate.
+            </p>
+            <picture class="inside__background">
+                <source srcset="images/content-images/img-inside-press-1.webp" type="image/webp">
+                <source srcset="images/content-images/img-inside-press.jpg" type="image/jpg">
+                <img src="images/content-images/img-inside-press.jpg" alt="">
+            </picture>
+        </header>
+        <article class="inside__card">
+            <a href="javascript: void(0);" title="" >
+                <h3 class="inside__card-title">Press about us</h3>
+                <p class="subtitle-text subtitle-text--inside-description cropped">AR golf platform BirdieEyes
+                    raises $300
+                    million at
+                    $2.7
+                    billion valuation</p>
+                <picture class="inside__logo">
+                    <img src="images/svg/img-tc.svg" alt="">
+                </picture>
+            </a>
+            <ul class="tabs">
+                <li class="tab tab--active"><a title="" href="javascript:void (0);"></a></li>
+                <li class="tab"><a title="" href="javascript:void (0);"></a></li>
+                <li class="tab"><a title="" href="javascript:void (0);"></a></li>
+                <li class="tab"><a title="" href="javascript:void (0);"></a></li>
+                <li class="tab"><a title="" href="javascript:void (0);"></a></li>
+            </ul>
+        </article>
+    </section>
+    <section class="news">
+        <h3 class="news__title">Latest news</h3>
+        <div class="news__cards">
+            <article class="news__article">
+                <a title="" href="javascript: void(0);">
+                    <p class="main-text description--card">How to use email marketing to connect with your users
                     </p>
-                    <div class="inside__background">
-                        <img src="images/content-images/img-inside-press.jpg" alt="">
-                    </div>
-                </header>
-                <article class="inside__card">
-                    <a href="javascript: void(0);" title="" class="">
-                        <h3 class="inside__card-title">Press about us</h3>
-                        <p class="subtitle-text subtitle-text--inside-description cropped">AR golf platform BirdieEyes
-                            raises $300
-                            million at
-                            $2.7
-                            billion valuation</p>
-                    </a>
-                    <div class="inside__logo">
-                        <img src="images/svg/img-tc.svg" alt="">
-                    </div>
-                    <ul class="tabs">
-                        <li class="tab tab--active"><a title="" href="javascript:void (0);"></a></li>
-                        <li class="tab"><a title="" href="javascript:void (0);"></a></li>
-                        <li class="tab"><a title="" href="javascript:void (0);"></a></li>
-                        <li class="tab"><a title="" href="javascript:void (0);"></a></li>
-                        <li class="tab"><a title="" href="javascript:void (0);"></a></li>
-                    </ul>
-                </article>
-            </section>
-            <section class="news">
-                <h3 class="news-title">Latest news</h3>
-                <div class="news__cards">
-                    <article class="news__article">
-                        <a title="" href="javascript: void(0);">
-                            <p class="main-text description--card">How to use email marketing to connect with your users
-                            </p>
-                            <span class="news__date">Dec 19, 2018</span>
-                        </a>
-                    </article>
-                    <article class="news__article">
-                        <a title="" href="javascript: void(0);">
-                            <p class="main-text  description--card">How to use email marketing to connect with your
-                                users
-                            </p>
-                            <span class="news__date">Dec 19, 2018</span>
-                        </a>
-                    </article>
-                    <article class="news__article">
-                        <a title="" href="javascript: void(0);">
-                            <p class="main-text description--card">How to use email marketing to connect with your users
-                            </p>
-                            <span class="news__date">Dec 19, 2018</span>
-                        </a>
-                    </article>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer__wrapper">
-                <img src="images/svg/img-map.svg" alt="" class="footer__background">
-                <div class="footer__heading">
-                    <h2 class="title footer--title">Contacts</h2>
-                    <div class="footer__social">
-                        <a href="javascript: void(0);" title="LinkedIn" class="footer__link"><img class="linkedin"
-                                src="images/svg/ic-linkedin-white.svg" title="" alt="LinkedIn"></a>
-                        <a href="javascript: void(0);" title="Facebook" class="footer__link"><img class="facebook"
-                                src="images/svg/ic-facebook-white.svg" title="" alt="Facebook"></a>
-                        <a href="javascript: void(0);" title="Instagram" class="footer__link"><img class="instagram"
-                                src="images/svg/ic-instagram-white.svg" title="" alt="Instagram"></a>
-                    </div>
-                </div>
-                <p class="main-text footer--description">Our head office is located in Norway.
-                    Research and development center is located in Belarus.</p>
-                <div class="footer__cities">
-                    <div class="footer__city">
-                        <h3 class="footer__subtitle">Norway</h3>
-                        <p class="footer__contacts">
-                            Kristiansand <br>
-                            Vestre strandgate, 23, 4th and 6th floor N-4611 <br>
-                            <a href="mailto:contact@frontbyte.no" title="" class="email-link">contact@frontbyte.no</a>
-                            <br>
-                            <a href="tel:+4741636983" title="" class="phone-link">+47 416 36 983</a>
-                        </p>
-                    </div>
-                    <div class="footer__city">
-                        <h3 class="footer__subtitle">Belarus</h3>
-                        <p class="footer__contacts">
-                            Minsk <br>
-                            Dombrovskaya str., 9, оffice 10.2.2 <br>
-                            <a href="mailto:contact@frontbyte.no" title="" class="email-link">contact@frontbyte.by</a>
-                            <br>
-                            <a href="tel:+4741636983" title="" class="phone-link">+375 29 1393336</a>
-                        </p>
-                    </div>
+                    <span class="news__date">Dec 19, 2018</span>
+                </a>
+            </article>
+            <article class="news__article">
+                <a title="" href="javascript: void(0);">
+                    <p class="main-text  description--card">How to use email marketing to connect with your
+                        users
+                    </p>
+                    <span class="news__date">Dec 19, 2018</span>
+                </a>
+            </article>
+            <article class="news__article">
+                <a title="" href="javascript: void(0);">
+                    <p class="main-text description--card">How to use email marketing to connect with your users
+                    </p>
+                    <span class="news__date">Dec 19, 2018</span>
+                </a>
+            </article>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <img src="images/svg/img-map.svg" alt="" class="footer__background">
+            <div class="footer__heading">
+                <h2 class="title footer--title">Contacts</h2>
+                <div class="footer__social">
+                    <a href="javascript: void(0);" title="LinkedIn" class="footer__link"><img class="linkedin"
+                            src="images/svg/ic-linkedin-white.svg" title="" alt="LinkedIn"></a>
+                    <a href="javascript: void(0);" title="Facebook" class="footer__link"><img class="facebook"
+                            src="images/svg/ic-facebook-white.svg" title="" alt="Facebook"></a>
+                    <a href="javascript: void(0);" title="Instagram" class="footer__link"><img class="instagram"
+                            src="images/svg/ic-instagram-white.svg" title="" alt="Instagram"></a>
                 </div>
             </div>
-            <div class="footer__link-drop link-drop">
-                <a href="javascript: void(0);" title="" class="link-item">Drop us a line</a>
-                <span class="copyright">&copy;&nbsp;2008&ndash;2018 Frontbyte</span>
+            <p class="main-text footer--description">Our head office is located in Norway.
+                Research and development center is located in Belarus.</p>
+            <div class="footer__cities">
+                <div class="footer__city">
+                    <h3 class="footer__subtitle">Norway</h3>
+                    <p class="footer__contacts">
+                        Kristiansand <br>
+                        Vestre strandgate, 23, 4th and 6th floor N-4611 <br>
+                        <a href="mailto:contact@frontbyte.no" title="" class="email-link">contact@frontbyte.no</a>
+                        <br>
+                        <a href="tel:+4741636983" title="" class="phone-link">+47 416 36 983</a>
+                    </p>
+                </div>
+                <div class="footer__city">
+                    <h3 class="footer__subtitle">Belarus</h3>
+                    <p class="footer__contacts">
+                        Minsk <br>
+                        Dombrovskaya str., 9, оffice 10.2.2 <br>
+                        <a href="mailto:contact@frontbyte.no" title="" class="email-link">contact@frontbyte.by</a>
+                        <br>
+                        <a href="tel:+4741636983" title="" class="phone-link">+375 29 1393336</a>
+                    </p>
+                </div>
             </div>
-        </footer>
+        </div>
+        <div class="footer__link-drop link-drop">
+            <a href="javascript: void(0);" title="" class="link-item">Drop us a line</a>
+            <span class="copyright">&copy;&nbsp;2008&ndash;2018 Frontbyte</span>
+        </div>
+    </footer>
     </div>
 </body>
 
