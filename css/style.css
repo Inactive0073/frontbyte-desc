@@ -12,12 +12,14 @@ picture {
     display: inline-block;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 * img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    font-family: 'object-fit: cover;';
 }
 
 body {
@@ -203,7 +205,7 @@ body {
     z-index: 2;
 }
 
-.header--description {
+.main-text--description {
     display: inline-flex;
     font-size: 20px;
     line-height: 30px;
@@ -216,7 +218,7 @@ body {
 }
 
 
-.header--link-item {
+.main-text--header-link {
     color: rgba(244, 244, 247, 0.5);
     display: inline-block;
     position: relative;
@@ -228,7 +230,7 @@ body {
     transition: color 0.3s, background-color 0.3s;
 }
 
-.header--link-item::after {
+.main-text--header-link::after {
     content: url("../images/svg/ic-next.svg");
     color: #f4f4f7;
     width: 30px;
@@ -239,7 +241,7 @@ body {
     transform: translate(-50px, -40px);
 }
 
-.header--link-item:hover {
+.main-text--header-link:hover {
     color: rgba(244, 244, 247, 1);
     background-color: rgba(244, 244, 247, 0.1);
 }
@@ -249,7 +251,7 @@ body {
 /* section about us */
 .about {
     background-color: #ffffff;
-    padding: 90px 140px 72px 200px;
+    padding: 90px 140px 111px 200px;
     margin-bottom: 100px;
 }
 
@@ -297,9 +299,17 @@ body {
 }
 
 /* for IE */
-.about__icon img {
+.about__icon--left img {
+    max-height: 59px;
+    max-width: 57px;
+}
+.about__icon--middle img {
     max-height: 61px;
-    max-width: 56px;
+    max-width: 52px;
+}
+.about__icon--right img {
+    max-height: 55px;
+    max-width: 57px;
 }
 
 /* end */
@@ -311,7 +321,6 @@ body {
     width: max-content;
     height: max-content;
     display: inline-block;
-    border-radius: 20px;
 }
 
 .about__icon--left {
@@ -323,7 +332,7 @@ body {
 }
 
 .about__icon--right img {
-    top: 15%;
+    top: 20%;
 }
 
 .about__icon--right {
@@ -348,17 +357,21 @@ body {
     padding-left: 80px;
 }
 
-.about__point {
+.main-text__list-point {
     margin-bottom: 30px;
     position: relative;
 }
 
-.about__point:first-child {
+.main-text__list-point:first-child {
     margin-bottom: 20px;
 }
+.main-text__list-point:last-child{
+    margin-bottom: 0;
+}
 
-.about__point::before {
+.main-text__list-point::before {
     content: "";
+    display: block;
     position: absolute;
     background-color: #64cae1;
     width: 30px;
@@ -399,8 +412,10 @@ body {
     transition: transform 0.3s, color 0.3s;
     line-height: 0;
 }
-
-.work__item {
+.work__card a{
+    display: inline-block;
+}
+.work__item--main {
     background-color: rgb(100, 202, 225);
     padding: 40px;
     width: 380px;
@@ -491,7 +506,7 @@ body {
 .team {
     height: 600px;
     position: relative;
-    margin-bottom: 96px;
+    margin-bottom: 100px;
 }
 
 .team__title {
@@ -668,7 +683,7 @@ body {
     margin-left: 120px;
 }
 
-.description--card {
+.main-text--description-card {
     margin-bottom: 20px;
 }
 
@@ -716,7 +731,7 @@ body {
 }
 
 .footer__link+.footer__link {
-    margin-left: 25px;
+    margin-left: 22px;
 }
 
 .footer__link img {
@@ -758,7 +773,7 @@ body {
     margin-right: 0;
 }
 
-.footer--title {
+.title--footer {
     margin-right: 115px;
     margin-bottom: 0;
     width: 380px;
@@ -802,7 +817,7 @@ body {
     color: #64cae1;
 }
 
-.footer--description {
+.main-text--footer-description {
     display: inline-block;
     margin-bottom: 90px;
     max-width: 380px;
@@ -816,8 +831,11 @@ body {
     left: 0;
     bottom: 0;
 }
-
-.link-item {
+.footer__link-drop a:hover {
+    color: rgba(244, 244, 247, 1);
+    background-color: rgb(0, 151, 185);
+}
+.footer__link-item {
     background-color: rgba(100, 202, 225, 0.911);
     color: inherit;
     display: inline-block;
@@ -829,7 +847,7 @@ body {
     transition: color 0.3s, background-color 0.3s;
 }
 
-.link-item::after {
+.footer__link-item::after {
     content: url("../images/svg/ic-next.svg");
     color: #f4f4f7;
     width: 30px;
@@ -840,12 +858,7 @@ body {
     transform: translate(-50px, -40px);
 }
 
-.footer__link-drop a:hover {
-    color: rgba(244, 244, 247, 1);
-    background-color: rgb(0, 151, 185);
-}
-
-.copyright {
+.footer__copyright {
     position: absolute;
     top: 50%;
     left: 100%;
