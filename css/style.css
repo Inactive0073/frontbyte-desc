@@ -120,11 +120,10 @@ body {
     height: 40px;
 }
 
-.logo__image {
+.logo__image img{
     border-radius: 50%;
     object-fit: contain;
 }
-
 
 .menu {
     margin-left: 119px;
@@ -198,11 +197,11 @@ body {
 }
 
 .title--main {
-    max-height: 100%;
     color: #f4f4f7;
     margin-bottom: 30px;
     position: relative;
     z-index: 2;
+    
 }
 
 .main-text--description {
@@ -257,7 +256,7 @@ body {
 
 .title--about {
     margin-bottom: 30px;
-    width: 780px;
+    padding-right: 35px;
 }
 
 .subtitle-text--description {
@@ -267,7 +266,6 @@ body {
 
 .about__list {
     display: flex;
-    margin-bottom: 70px;
     flex-wrap: wrap;
 }
 
@@ -281,6 +279,7 @@ body {
     min-height: 210px;
     flex-shrink: 0;
     margin-right: 60px;
+    margin-bottom: 70px;
 }
 
 .about__item:nth-child(3n) {
@@ -293,8 +292,10 @@ body {
     background-color: #f47e3d;
     border-radius: 50%;
     text-align: center;
-    margin-bottom: 20px;
-    display: inline-block;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -306,6 +307,7 @@ body {
 .about__icon--middle img {
     max-height: 61px;
     max-width: 52px;
+    padding-left: 10px;
 }
 .about__icon--right img {
     max-height: 55px;
@@ -315,9 +317,6 @@ body {
 /* end */
 
 .about__icon img {
-    position: absolute;
-    top: 20%;
-    left: 20%;
     width: max-content;
     height: max-content;
     display: inline-block;
@@ -325,14 +324,6 @@ body {
 
 .about__icon--left {
     background-color: #63c9e0;
-}
-
-.about__icon--middle img {
-    left: 25%;
-}
-
-.about__icon--right img {
-    top: 20%;
 }
 
 .about__icon--right {
@@ -375,7 +366,7 @@ body {
     position: absolute;
     background-color: #64cae1;
     width: 30px;
-    top: 50%;
+    top: 15px;
     right: 100%;
     transform: translateX(-30px);
     height: 1px;
@@ -431,18 +422,18 @@ body {
 }
 
 /* hover effect for links in card*/
-.work__card p, .work__card h3, .team__card h3, .team__card p,
-.inside__card h3, .inside__card p, .news__article p, .news__article span {
+.work__card p,   .team__card p,
+ .inside__card p, .news__article p, .news__article span {
     transition: color 0.3s
 }
 
-.work__card p:hover, .work__card h3:hover, .team__card h3:hover,
-.team__card p:hover, .inside__card h3:hover, .inside__card p:hover,
-.news__article p:hover, .news__article span:hover {
+.work__card .b-link:hover p,
+.team .b-link:hover p,  .inside__card .b-link:hover p,
+.news__article .b-link:hover p {
     color: rgba(45, 45, 66, 0.6);
 }
 
-.work__card--main p:hover, .work__card--main h3:hover {
+.work__card--main .b-link:hover p{
     color: rgba(244, 244, 247, 0.8);
 }
 
@@ -453,6 +444,7 @@ body {
     font-weight: 900;
     letter-spacing: 1.75px;
     margin-bottom: 40px;
+    -webkit-line-clamp: 2;
 }
 
 .work__cards {
@@ -486,6 +478,7 @@ body {
 
 .work__image {
     margin-bottom: 40px;
+    width: 580px;
 }
 
 .work__article-title {
@@ -508,7 +501,9 @@ body {
     position: relative;
     margin-bottom: 100px;
 }
-
+.b-link--team{
+    height: 100%;
+}
 .team__title {
     font-weight: 900;
     font-size: 13px;
@@ -516,6 +511,7 @@ body {
     letter-spacing: 1.75px;
     text-transform: uppercase;
     margin-bottom: 50px;
+    -webkit-line-clamp: 2;
 }
 
 .team__background-image {
@@ -530,10 +526,11 @@ body {
     padding: 40px;
     color: #2d2d42;
     width: 380px;
-    min-height: 380px;
+    height: 380px;
     position: absolute;
     left: 51%;
     bottom: 22px;
+    
 }
 
 .text-card {
@@ -633,7 +630,7 @@ body {
     background-color: #2d2d42;
 }
 
-.tab a {
+.tab__link {
     display: inline-block;
     line-height: 0;
     width: 100%;
@@ -651,13 +648,10 @@ body {
 
 /* ======================= end of inside section ==================== */
 /* news cards */
-.news {
-    margin-bottom: 100px;
-}
 
 .news__cards {
     display: flex;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 .news__title {
@@ -672,15 +666,19 @@ body {
 
 .news__article {
     max-width: 280px;
-    font-weight: 300;
     position: relative;
-    cursor: pointer;
     flex-shrink: 0;
+    display: flex;
     transition: transform 0.1s;
+    margin-right: 120px;
+    margin-bottom: 100px;
 }
-
-.news__article+.news__article {
-    margin-left: 120px;
+.b-link--article-news{
+    display: flex;
+    flex-direction: column;
+}
+.news__article:nth-child(3n){
+    margin-right: 0;
 }
 
 .main-text--description-card {
@@ -692,6 +690,7 @@ body {
     color: #93a4a9;
     font-size: 15px;
     line-height: 20px;
+    margin-top: auto;
 }
 
 /* ============================= end of news section ============================= */
@@ -716,6 +715,8 @@ body {
     z-index: 1;
     right: -25px;
     top: 64px;
+    width: 950px;
+    height: 473px;
     object-fit: scale-down;
 }
 
@@ -762,6 +763,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 115px;
+    margin-right: -118px;
 }
 
 .footer__city {
