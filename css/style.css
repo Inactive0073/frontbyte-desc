@@ -321,6 +321,7 @@ body {
     width: max-content;
     height: max-content;
     display: inline-block;
+    background-size:auto !important; /* for IE */
 }
 
 .about__icon--left {
@@ -404,7 +405,7 @@ body {
     line-height: 0;
 }
 .b-link--work{
-    display: block;
+    display: inline-block;
     height: 100%;
 }
 .work__item--main {
@@ -585,9 +586,6 @@ body {
 
 .inside__background {
     position: relative;
-}
-
-.inside__background img {
     width: 980px;
     height: 600px;
 }
@@ -688,6 +686,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+.b-link{
+    display: inline-block;
+}
 .news__article:nth-child(3n){
     margin-right: 0;
 }
@@ -729,7 +730,7 @@ body {
     height: 473px;
 }
 .footer__background img{
-    object-fit: scale-down;
+    object-fit: cover;
 }
 
 .footer p, .footer h3 {
