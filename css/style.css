@@ -27,6 +27,7 @@ body {
     font-family: "Roboto";
     font-weight: 300;
     font-size: 20px;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -333,7 +334,6 @@ body {
 .title--activity {
     color: #c0c6c8;
     margin-bottom: 75px;
-    width: 680px;
 }
 
 .main-text--list {
@@ -403,8 +403,9 @@ body {
     transition: transform 0.3s, color 0.3s;
     line-height: 0;
 }
-.work__card a{
-    display: inline-block;
+.b-link--work{
+    display: block;
+    height: 100%;
 }
 .work__item--main {
     background-color: rgb(100, 202, 225);
@@ -503,6 +504,7 @@ body {
 }
 .b-link--team{
     height: 100%;
+    display: block;
 }
 .team__title {
     font-weight: 900;
@@ -529,8 +531,7 @@ body {
     height: 380px;
     position: absolute;
     left: 51%;
-    bottom: 22px;
-    
+    bottom: 15px;
 }
 
 .text-card {
@@ -565,6 +566,7 @@ body {
     letter-spacing: 1.75px;
     text-transform: uppercase;
     margin-bottom: 32px;
+    -webkit-line-clamp: 2;
 }
 
 .subtitle-section {
@@ -636,6 +638,15 @@ body {
     width: 100%;
     height: 100%;
     padding: 10px 0;
+    position: relative;
+}
+.tab__link::before{
+    content: "";
+    position: absolute;
+    height: 20px;
+    left: 0;
+    width: 100%;
+    bottom: 100%;
 }
 
 .tab--active {
@@ -712,11 +723,12 @@ body {
 
 .footer__background {
     position: absolute;
-    z-index: 1;
     right: -25px;
     top: 64px;
     width: 950px;
     height: 473px;
+}
+.footer__background img{
     object-fit: scale-down;
 }
 
@@ -738,6 +750,7 @@ body {
 .footer__link img {
     width: 30px;
     height: 30px;
+    border-radius: 50%;
 }
 
 .linkedin, .facebook, .instagram {
@@ -762,13 +775,13 @@ body {
 .footer__cities {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 115px;
     margin-right: -118px;
 }
 
 .footer__city {
     width: 380px;
     margin-right: 118px;
+    margin-bottom: 115px;
 }
 
 .footer__city:last-child {
